@@ -1,0 +1,22 @@
+{
+  "files": {
+    "app.js": "/aden/static/js/app.824802af.chunk.js",
+    "app.js.map": "/aden/static/js/app.824802af.chunk.js.map",
+    "runtime~app.js": "/aden/static/js/runtime~app.83b26508.js",
+    "runtime~app.js.map": "/aden/static/js/runtime~app.83b26508.js.map",
+    "static/js/2.baffeb44.chunk.js": "/aden/static/js/2.baffeb44.chunk.js",
+    "static/js/2.baffeb44.chunk.js.map": "/aden/static/js/2.baffeb44.chunk.js.map",
+    "favicon-16.png": "/aden/favicon-16.png",
+    "favicon-32.png": "/aden/favicon-32.png",
+    "favicon.ico": "/aden/favicon.ico",
+    "index.html": "/aden/index.html",
+    "manifest.json": "/aden/manifest.json",
+    "serve.json": "/aden/serve.json",
+    "static/js/2.baffeb44.chunk.js.LICENSE.txt": "/aden/static/js/2.baffeb44.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.83b26508.js",
+    "static/js/2.baffeb44.chunk.js",
+    "static/js/app.824802af.chunk.js"
+  ]
+}
