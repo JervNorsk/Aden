@@ -1,0 +1,34 @@
+{
+  "name": "aden",
+  "version": "0.0.1",
+  "homepage": "https://jervnorsk.github.io/aden",
+  "author": {
+    "name": "Jerv Norsk",
+    "email": "jerv.norsk@gmail.com",
+    "url": "https://github.com/JervNorsk"
+  },
+  "bugs": {
+    "url": "https://github.com/JervNorsk/aden/issues"
+  },
+  "dependencies": {
+    "react-dom": "17.0.1",
+    "react-native": "^0.64.0",
+    "react-native-web": "latest",
+    "react-native-gesture-handler": "~2.1.0",
+    "native-base": "latest"
+  },
+  "devDependencies": {
+    "expo": "latest",
+    "expo-cli": "latest",
+    "expo-app-loading": "latest",
+    "expo-font": "latest",
+    "@expo-google-fonts/outfit": "latest",
+    "@expo/vector-icons": "latest",
+    "typescript": "latest",
+    "@types/react": "17.0.1"
+  },
+  "scripts": {
+    "start": "expo start",
+    "build": "expo build:web"
+  }
+}
