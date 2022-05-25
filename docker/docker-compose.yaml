@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  proxy:
+    image: ghcr.io/jervnorsk/nginx
+    volumes:
+      - ./proxy/swap:/srv/docker/swap
+    networks:
+      - public
+      - private
+    ports:
+      - "50110:80"
+  frontend:
+    image: ghcr.io/jervnorsk/expo-cli
+    volumes:
+      - ../service/frontend:/srv/docker/repository
+    networks:
+      - private
+    ports:
+      - "19000-19010:19000-19010"
+    command: "expo start app --port 19000 --web"
+    environment:
+      REACT_NATIVE_PACKAGER_HOSTNAME: $HOST_IP
+#      REACT_NATIVE_PACKAGER_HOSTNAME: dev.jervnorsk.github.io
+
+
+networks:
+  public:
+    name: www
+    external: true
+  private:
