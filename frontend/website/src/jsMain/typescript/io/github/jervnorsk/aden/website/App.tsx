@@ -1,15 +1,18 @@
-import ScreenContainer from "./component/ScreenContainer";
-import Screen from "./component/Screen";
-import IndexScreen from "./screen/IndexScreen";
-import UIFramework from "./component/UIFramework";
-import LoadScreen from "./screen/LoadScreen";
+import {Text} from "native-base";
+import Root from "./component/Root";
+import {useAssets} from "./util/AssetHooks";
+import {Outfit} from "./asset/FontManager";
 
 export default () => {
+    const assets = useAssets({
+        fonts: {
+            Outfit
+        },
+        fontDefault: "Outfit"
+    })
     return (
-        <UIFramework>
-            <ScreenContainer>
-                <Screen name={"Index"} component={IndexScreen}/>
-            </ScreenContainer>
-        </UIFramework>
+        <Root assets={assets}>
+            <Text fontSize={"24px"}>Hello from React/JSX - TypeScript</Text>
+        </Root>
     )
 }
