@@ -10,21 +10,30 @@ export type AssetProps =
 
 export type AsyncAssetProps =
     {
-        isReady: boolean
+        async: {
+            isCompleted: boolean,
+            percentage: number
+        }
     }
     & AssetProps
 
 export const useAssets = (assets: AssetProps): AsyncAssetProps => {
-    const [isReady, setReady] = useState(false)
+    const [isCompleted, setCompleted] = useState(false)
+    const [percentage, setPercentage] = useState(0)
 
     const computedFonts = computeFonts(assets.fonts)
 
+    const incrementPercentage = (percentage: number, setPercentage: (value: number) => void, increment: number): void => {
+        setPercentage(percentage + increment)
+    }
+
     loadAsync(computedFonts)
         .then(() => {
-            setReady(true)
+            setPercentage(100)
+            setCompleted(true)
         })
 
-    return {isReady, ...assets}
+    return {async: {isCompleted, percentage}, ...assets}
 }
 
 export function computeFonts(fonts: FontAssetMap): any {
