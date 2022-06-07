@@ -1,10 +1,9 @@
-import {NavigationContainer} from "@react-navigation/native";
 import {extendTheme, NativeBaseProvider, Stack} from "native-base";
 import {PropsWithChildren, useEffect, useState} from "react";
 import {View} from "react-native";
 import {AsyncAssetProps} from "../util/AssetHooks";
 
-export const LoadScreen = (props: AsyncAssetProps) => {
+const LoadScreen = (props: AsyncAssetProps) => {
     const [transform, setTransform] = useState("")
 
     useEffect(() => {
@@ -44,7 +43,7 @@ export const LoadScreen = (props: AsyncAssetProps) => {
     )
 }
 
-export const MainScreen = (props: PropsWithChildren<AsyncAssetProps>) => {
+const MainScreen = (props: PropsWithChildren<AsyncAssetProps>) => {
     if (!props.async.isCompleted) {
         return null
     }
@@ -69,12 +68,12 @@ export const MainScreen = (props: PropsWithChildren<AsyncAssetProps>) => {
 export type RootProps = PropsWithChildren<{
     assets: AsyncAssetProps
 }>
-export const Root = (props: RootProps) => {
+const Root = (props: RootProps) => {
     return (
-        <NavigationContainer>
+        <View>
             <MainScreen {...props.assets} children={props.children}/>
-            <LoadScreen {...props.assets} />
-        </NavigationContainer>
+            {/*<LoadScreen {...props.assets} />*/}
+        </View>
     )
 }
 export default Root
